@@ -1,0 +1,23 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Caike Garcia",
+      "email": "caikegarcia@email",
+      "senha": "12345C!"
+    },
+    {
+      "id": "0765",
+      "nome": "bea",
+      "email": "bea@email.com",
+      "senha": "123456B!",
+      "empresa": "bealtda",
+      "cnpj": "12345678912",
+      "cargo": "gerente",
+      "telefone": "123362548",
+      "dataCadastro": "2026-03-08T19:27:51.917Z",
+      "ativo": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

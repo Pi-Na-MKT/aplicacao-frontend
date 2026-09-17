@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+
+    <script src="/js/cadastro.js" defer></script>
+    <link rel="stylesheet" href="/css/utils.css">
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+    <main class="login-container">
+
+        <section class="form-section-2">
+
+            <div class="tabs">
+            <h2 onclick="irParaLogin()">Login</h2>
+            <h2 class="active">Cadastro</h2>
+            </div>
+
+            <form>
+
+                <div class="input-group">
+                <input type="text" id="inp_empresa" placeholder="Empresa">
+                </div>
+
+                <div class="input-group">
+                <input type="text" id="inp_cnpj" placeholder="CNPJ">
+                </div>
+
+                <div class="input-group">
+                <input type="text" id="inp_nome" placeholder="Nome completo">
+                </div>
+
+                <div class="input-group">
+                <input type="text" id="inp_telefone" placeholder="Telefone">
+                </div>
+
+                <div class="input-group">
+                <input type="email" id="inp_email" placeholder="Email">
+                </div>
+
+                <div class="input-group">
+                <input type="password" id="inp_senha" placeholder="Senha">
+                </div>
+
+                <button type="button" onclick="cadastrar()" class="btn-login">
+                Cadastrar
+                </button>
+
+                <p id="msg"></p>
+
+            </form>
+
+        </section>
+
+        <div class="bg-decoration"></div>
+
+    </main>
+
+</body>
+</html>
+<script>
+    function irParaLogin(){
+    window.location.href = "login.html";
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <script src="/js/login.js"></script>
+    <link rel="stylesheet" href="/css/utils.css">
+</head>
+<body>
+
+    <header class="header">
+    </header>
+
+    <main class="login-container">
+        <section class="form-section">
+            <div class="tabs">
+                <h2 class="active">Login</h2>
+                <h2 onclick="irParaCadastro()">Cadastro</h2>
+            </div>
+
+            <form>
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" placeholder="Insira seu email" id="inp_email">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Insira sua senha" id="inp_senha">
+                </div>
+                
+                <button type="button" onclick="validar()" class="btn-login">Entrar</button>
+                <p id="msg"></p>
+            </form>
+        </section>
+
+        <div class="bg-decoration"></div>
+    </main>
+
+</body>
+</html>
+<script>
+    function irParaCadastro(){
+    window.location.href = "cadastro.html";
+}
+</script>
