@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #F4F5F7;
+    color: #1A1D23;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm;
+    box-shadow: 0 2px 8px rgba(91,79,232,0.25);
+  }
+  .btn-primary:hover {
+    background-color: #4840C8;
+    box-shadow: 0 4px 16px rgba(91,79,232,0.35);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all;
+  }
+  .btn-ghost:hover { @apply bg-gray-50 border-gray-300; }
+
+  .section-title {
+    @apply text-[10px] font-bold uppercase tracking-widest text-gray-400;
+  }
+  .page-header { @apply text-2xl font-bold text-gray-900 tracking-tight; }
+  .page-sub    { @apply text-sm text-gray-500 mt-0.5; }
+
+  .input-base {
+    @apply w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder-gray-400;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .status-ativo   { @apply bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200/60; }
+  .status-inativo { @apply bg-gray-100   text-gray-500   ring-1 ring-gray-200/60; }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #E5E7EB transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; height: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background-color: #D1D5DB; border-radius: 20px; }
+
+  .card-hover {
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(91,79,232,0.10);
+  }
+}
+
+/* Micro-animações */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up  { animation: fadeUp  0.3s ease forwards; }
+.animate-scale-in { animation: scaleIn 0.2s ease both; }
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Drag-over glow */
+.drag-active {
+  border-color: #5B4FE8 !important;
+  background: rgba(91,79,232,0.04) !important;
+  box-shadow: 0 0 0 3px rgba(91,79,232,0.12);
+}
+
+/* Kanban board - horizontal scroll smooth */
+.kanban-board { scroll-snap-type: x mandatory; }
+.kanban-col   { scroll-snap-align: start; }
